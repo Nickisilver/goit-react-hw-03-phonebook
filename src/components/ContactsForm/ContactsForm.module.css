@@ -1,0 +1,100 @@
+.ContactsFormWrapper {
+  display: flex; 
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.ContactsFormTitle {
+            
+            font-weight: bold;
+            animation: textShadow 1s ease-in-out 
+                infinite alternate;
+        }
+  
+        @keyframes textShadow {
+            from {
+                text-shadow: 2px 2px #333;
+            }
+  
+            to {
+                text-shadow: 10px 10px #333;
+            }
+        }
+
+        .ContactsForm {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+.ContactsFormInpText {
+  font-size: 27px;
+}
+
+.ContactsFormInpText {
+  font-size: 25px;
+  font-weight: bold;
+text-align: center;
+  animation: gradientText 5s ease-in-out infinite;
+}
+
+@keyframes gradientText {
+  0% {
+      color: red;
+  }
+
+  25% {
+      color: yellow;
+  }
+
+  50% {
+      color: blue;
+  }
+
+  100% {
+      color: green;
+  }
+}
+
+input{
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  height: 30px;
+  font-size: 25px;
+  padding: 0 15px;
+}
+
+
+.BtnAdd{
+margin: 0 auto;
+font-family: Roboto, sans-serif;
+font-weight: 600;
+font-size: 14px;
+color: #fff;
+background-color: #0066CC;
+padding: 10px 30px;
+border: 2px solid #0066cc;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.BtnAdd:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #0066cc;
+border: solid 2px #0066cc;
+}
+

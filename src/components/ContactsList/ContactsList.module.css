@@ -1,0 +1,29 @@
+.ContactsListWrapper {
+  display: flex; 
+  flex-direction: column;
+  gap: 40px;
+
+}
+
+.ContactsFormTitle {
+      text-align: center;      
+  font-weight: bold;
+  animation: textShadow 1s ease-in-out 
+      infinite alternate;
+}
+
+@keyframes textShadow {
+  from {
+      text-shadow: 2px 2px #333;
+  }
+
+  to {
+      text-shadow: 10px 10px #333;
+  }
+}
+
+.ContactsList{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

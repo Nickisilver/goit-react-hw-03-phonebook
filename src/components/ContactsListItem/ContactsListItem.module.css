@@ -1,0 +1,45 @@
+.contentWrapper {
+  display: flex;
+  font-size: 22px;
+  justify-content: space-between;
+  width: 400px;
+  background-color: skyblue;
+  padding: 5px;
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
+}
+
+.contentWrapper:hover{
+scale: 1.2;
+}
+
+
+.deleteBtn{
+
+font-family: Roboto, sans-serif;
+font-weight: 600;
+font-size: 14px;
+color: #fff;
+background-color: #1276db8e;
+padding: 5px 20px;
+border: 2px solid #0066cc;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 50px;
+transition : 893ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.deleteBtn:hover{
+
+transition : 893ms;
+padding: 5px 30px;
+transform : translateY(-0px);
+background-color: #74edbb7c;
+color: #5e32d9;
+border: solid 2px #5e32d9;
+}
+
