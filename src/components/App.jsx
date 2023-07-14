@@ -7,18 +7,29 @@ import css from './App.module.css'
 import { nanoid } from 'nanoid'
 export class App extends Component {
   state = {
-    contacts: [
-      {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-      {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-      {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-      {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-    ],
+    contacts: [],
     filter: '',
   };
 
+  componentDidMount(){
+    const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
+    if(this.state.contacts){
+
+
+      this.setState({contacts:parsedContacts})
+    }
+  }
+  componentDidUpdate(prevProps, prevState){
+   
+    if(prevState.contacts !== this.state.contacts){
+      console.log(this.state.contacts);
+
+      localStorage.setItem( 'contacts', JSON.stringify(this.state.contacts))
+    }
+  }
+
   AddContact = data => {
     const {contacts} = this.state
-    console.log(data);
     if (contacts.some(contact => contact.name === data.name)) {
       alert(`${data.name} is already in contacts.`);
       return;
@@ -35,7 +46,9 @@ export class App extends Component {
   filteredContacts = () => {
     const {filter, contacts} = this.state
     const normalizeFilter = filter.toLocaleLowerCase()
-    return contacts.filter(contact => contact.name.toLocaleLowerCase().includes(normalizeFilter))
+    const feltedContacts = contacts.filter(contact => contact.name.toLocaleLowerCase().includes(normalizeFilter))
+    const sortedContact = feltedContacts.sort((a, b) => a.name.localeCompare(b.name))
+    return sortedContact
   }
 
   deleteContact = id => {
